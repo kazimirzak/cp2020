@@ -1,12 +1,12 @@
 package week8;
 
 /**
- * 
+ *
  * @author Fabrizio Montesi
  */
-public class LambdaExercise2
-{
-	/*
+public class LambdaExercise2 {
+
+    /*
 	Let's make a more advanced box.
 	
 	- Create a new interface BoxFunction<I,O> with a method "apply" that
@@ -22,22 +22,24 @@ public class LambdaExercise2
 
 	- Modify the Box class constructor such that it throws an IllegalArgumentException
 	  if the passed content is null.
-	*/
+     */
     public static void main() {
         Integer number;
         AdvancedBox<String> box = new AdvancedBox("Hey there 42");
-        number = box.apply(new BoxFunction<String, Integer>(){
-            
+        number = box.apply(new BoxFunction<String, Integer>() {
+
             @Override
             public Integer apply(String s) {
                 return s.length();
             }
         });
+        
         System.out.println(number);
         number = 0;
         number = box.apply((input) -> {
             return input.length();
         });
+        
         System.out.println(number);
         number = 0;
         number = box.apply(String::length);
