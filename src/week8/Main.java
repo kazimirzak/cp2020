@@ -11,6 +11,6 @@ public class Main {
         //LambdaExercise2.main();
         //LambdaExercise3.main();
         //LambdaExercise4.main();
-        //LambdaExercise5.main();
+        LambdaExercise5.main();
     }
 }

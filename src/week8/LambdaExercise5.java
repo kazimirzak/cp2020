@@ -20,6 +20,8 @@ public class LambdaExercise5 {
         // We then use the applyToAll to replace all "i" in the strings
         // to "a".
         List<AdvancedBox<String>> list = createList();
+        list.forEach(box -> System.out.println(box.content()));
+        System.out.println();
         List<String> result = AdvancedBox.applyToAll(list, (String input) -> input.replaceAll("i", "a"));
         result.forEach(System.out::println);
     }

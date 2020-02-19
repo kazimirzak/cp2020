@@ -48,5 +48,19 @@ public class LambdaExercise2 {
         number = 0;
         number = box.apply(String::length);
         System.out.println(number);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }

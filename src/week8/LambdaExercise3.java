@@ -23,6 +23,7 @@ public class LambdaExercise3 {
         // We then use a box function in order to sort the list.
         List<String> list = createList();
         AdvancedBox<List<String>> box = new AdvancedBox<>(list);
+        System.out.println(list);
         box.apply(new BoxFunction<List<String>, List<String>>() {
             @Override
             public List<String> apply(List<String> input) {

@@ -17,12 +17,18 @@ public class LambdaExercise4 {
     public static void main() {
         // Takes a list of strings and puts them inside a box.
         // We then use a box function that takes the list,
-        // converts it to a stream. It will then map this stream
-        // To a stream of ints by calling String.length()
-        // We then sum to integer stream.
+        // we then create an annomous method that has a variable
+        // called result that works as an accumulator.
+        // We then take each string in the list and add the
+        // length of that string to the result.
         List<String> list = createList();
         AdvancedBox<List<String>> box = new AdvancedBox<>(list);
-        long sum = box.apply(l -> l.stream().mapToInt(String::length).sum());
+        long sum = box.apply(l -> {
+            long result = 0;
+            for(String s : l)
+                result += s.length();
+            return result;
+        });
         System.out.println(sum);
     }
     

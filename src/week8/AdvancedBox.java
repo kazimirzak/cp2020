@@ -1,7 +1,7 @@
 package week8;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * An immutable class advanced box. Used to contain a single item.
@@ -52,7 +52,21 @@ public class AdvancedBox<T> {
      * @return a list of what is returned by the box function when applied to all boxes.
      */
 
-    public static <I, O> List<O> applyToAll(List<AdvancedBox<I>> list, BoxFunction<I, O> boxFunction) {
-        return list.stream().map(box -> box.apply(boxFunction)).collect(Collectors.toList());
+    public static <I, O> List<O> applyToAll(List<AdvancedBox<I>> list, 
+            BoxFunction<I, O> boxFunction) {
+        // We create a new list that can hold the result of each apply function.
+        // We then apply it to each one of them in the list and add them to the new list.
+        List<O> result = new ArrayList<>();
+        for (AdvancedBox<I> box : list) {
+            result.add(box.apply(boxFunction));
+        }
+        return result;
     }
+    
+    
+    
+    
+    
+    
+    
 }
