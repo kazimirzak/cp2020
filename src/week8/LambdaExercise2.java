@@ -24,6 +24,8 @@ public class LambdaExercise2 {
 	  if the passed content is null.
      */
     public static void main() {
+        // Creates a box with a string and the uses the apply function to convert it to
+        // an integer. In this case its the length of the string.
         Integer number;
         AdvancedBox<String> box = new AdvancedBox("Hey there 42");
         number = box.apply(new BoxFunction<String, Integer>() {
@@ -34,12 +36,14 @@ public class LambdaExercise2 {
             }
         });
         
+        // This is equivalent to the example above. Uses lambda expression instead.
         System.out.println(number);
         number = 0;
         number = box.apply((input) -> {
             return input.length();
         });
         
+        // This is equivalent to the example above. Uses method reference operator instead.
         System.out.println(number);
         number = 0;
         number = box.apply(String::length);
