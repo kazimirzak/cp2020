@@ -14,7 +14,7 @@ public class ThreadExercise1 {
     - Make Counter thread-safe (see Chapter 2 in the book)
     - Does it make a different to declare i private or public?
     */
-    public static void main() {
+    public static void main(String[] args) {
         Thread t;
         int counts = 100_000;
         CounterNOTTHREADSAFE c = new CounterNOTTHREADSAFE();

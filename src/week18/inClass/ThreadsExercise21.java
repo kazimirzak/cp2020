@@ -21,7 +21,7 @@ public class ThreadsExercise21 {
         try {
             boolean found
                     = Files
-                            .walk(Paths.get("data/test.txt"))
+                            .walk(Paths.get("data"))
                             .filter(Files::isRegularFile)
                             .collect(Collectors.toList())
                             .parallelStream()

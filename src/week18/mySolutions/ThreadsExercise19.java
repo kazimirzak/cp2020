@@ -1,6 +1,7 @@
 package week18.mySolutions;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -32,7 +33,7 @@ public class ThreadsExercise19 {
                             .map(file -> {
                                 try {
                                     FileInfo fileInfo = new FileInfo(file, Files.size(file));
-                                    Files.lines(file).forEach(line -> {
+                                    Files.lines(file, StandardCharsets.UTF_8).forEach(line -> {
                                         fileInfo.incrementLines();
                                         if (line.startsWith("L")) {
                                             fileInfo.incrementLLines();
